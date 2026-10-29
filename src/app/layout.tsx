@@ -77,7 +77,7 @@ const jsonLd = {
     addressCountry: "BR",
   },
   telephone: "+5511974848888",
-  email: "nutri.fernandayaryd@gmail.com",
+  email: "nutricionista@fernandayaryd.com",
   sameAs: ["https://www.instagram.com/nutrifeyaryd"],
   priceRange: "$$",
   areaServed: "São Paulo",

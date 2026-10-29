@@ -18,8 +18,8 @@ const CONTACTS = [
   },
   {
     icon: MailIcon,
-    href: "mailto:nutri.fernandayaryd@gmail.com",
-    label: "nutri.fernandayaryd@gmail.com",
+    href: "mailto:nutricionista@fernandayaryd.com",
+    label: "nutricionista@fernandayaryd.com",
   }
 ];
 
