@@ -16,7 +16,7 @@ export default function WhatsAppButton() {
 
   return (
     <div
-      className={`fixed bottom-6 right-6 z-[999] flex items-center gap-3 transition-all duration-500 ease-out ${
+      className={`pointer-events-none fixed bottom-6 right-6 z-[999] flex items-center gap-3 transition-all duration-500 ease-out ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
@@ -39,7 +39,7 @@ export default function WhatsAppButton() {
         aria-label="Falar no WhatsApp"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] shadow-[0_10px_30px_-8px_rgba(37,211,102,0.65)] transition-transform duration-300 hover:scale-110"
+        className="pointer-events-auto relative flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] shadow-[0_10px_30px_-8px_rgba(37,211,102,0.65)] transition-transform duration-300 hover:scale-110"
       >
         {/* Ping rings — native Tailwind animation, no custom CSS required */}
         <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-[ping_2.5s_cubic-bezier(0,0,0.2,1)_infinite]" />
