@@ -132,6 +132,37 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Immutable media. These files are content assets, not build output, so
+        // their names are not content-hashed. If an image or the hero video is
+        // ever replaced, give it a NEW filename (or bust the query string) so
+        // returning visitors don't keep the old cached copy for a year.
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/video/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/fonts/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: [
           {

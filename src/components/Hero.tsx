@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
 import LetterReveal from "./LetterReveal";
+import HeroVideo from "./HeroVideo";
 
 export default function Hero() {
   return (
@@ -76,26 +77,15 @@ export default function Hero() {
 
         <Reveal direction="right" delay={250} className="relative">
           <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] shadow-[0_30px_70px_-30px_rgba(58,53,47,0.35)] lg:max-w-none">
-            <video
-              className="hidden h-full w-full object-cover lg:block"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/images/fernanda-portrait-arch.jpg"
-              aria-label="Vídeo institucional de Fernanda Yaryd"
-            >
-              <source src="/video/hero.mp4" type="video/mp4" />
-            </video>
             <Image
               src="/images/fernanda-portrait-arch.jpg"
               alt="Fernanda Yaryd, nutricionista, sorrindo em ambiente clean e acolhedor"
               fill
               priority
               sizes="(max-width: 1024px) 90vw, 45vw"
-              className="object-cover lg:hidden"
+              className="object-cover"
             />
+            <HeroVideo />
           </div>
           <div
             className="absolute -bottom-6 -left-6 hidden h-28 w-28 rounded-full bg-white shadow-float sm:flex flex-col items-center justify-center text-center lg:flex"

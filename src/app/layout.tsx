@@ -1,14 +1,5 @@
 import type { Metadata } from "next";
-import "@fontsource/playfair-display/400.css";
-import "@fontsource/playfair-display/500.css";
-import "@fontsource/playfair-display/600.css";
-import "@fontsource/playfair-display/700.css";
-import "@fontsource/playfair-display/400-italic.css";
-import "@fontsource/playfair-display/500-italic.css";
-import "@fontsource/inter/300.css";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/600.css";
+import { preload } from "react-dom";
 import "./globals.css";
 
 const siteUrl = "https://www.nutrifernandayaryd.com.br";
@@ -88,6 +79,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  preload("/fonts/playfair-display-latin-400-normal.woff2", {
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+    fetchPriority: "high",
+  });
+  preload("/fonts/playfair-display-latin-400-italic.woff2", {
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+    fetchPriority: "high",
+  });
+  preload("/fonts/inter-latin-400-normal.woff2", {
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  });
+  preload("/fonts/inter-latin-500-normal.woff2", {
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  });
+  preload("/fonts/inter-latin-600-normal.woff2", {
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
+  });
+
   return (
     <html lang="pt-BR" className="scroll-smooth" suppressHydrationWarning>
       <head>

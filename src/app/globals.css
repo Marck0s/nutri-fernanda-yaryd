@@ -1,8 +1,70 @@
 @import "tailwindcss";
 
+/* Self-hosted latin subsets. Only the weights actually used by the page are
+   declared, and the four above-the-fold files are preloaded in layout.tsx.
+   The fallback faces mirror the real font metrics so text does not reflow
+   when the webfont swaps in (CLS). */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/playfair-display-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/playfair-display-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Playfair Display Fallback";
+  src: local("Arial");
+  ascent-override: 106.51%;
+  descent-override: 24.71%;
+  line-gap-override: 0%;
+  size-adjust: 101.58%;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/inter-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/inter-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/inter-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  ascent-override: 89.79%;
+  descent-override: 22.36%;
+  line-gap-override: 0%;
+  size-adjust: 107.89%;
+}
+
 @theme {
-  --font-display: "Playfair Display", serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: "Playfair Display", "Playfair Display Fallback", serif;
+  --font-body: "Inter", "Inter Fallback", sans-serif;
 
   --color-cream: #f2e9e2;
   --color-cream-soft: #f7f1ec;

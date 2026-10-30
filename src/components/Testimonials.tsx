@@ -205,7 +205,6 @@ export default function Testimonials() {
                           width={44}
                           height={44}
                           className="rounded-full object-cover"
-                          priority
                         />
                         <div>
                           <p className="text-sm font-medium text-ink">{t.name}</p>
